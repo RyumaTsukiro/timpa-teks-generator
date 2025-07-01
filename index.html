@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timpa Teks Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Timpa Teks Generator</h1>
+            <p>Buat meme 'timpa teks' dengan mudah. Mode AI (Beta) kini tersedia!</p>
+        </header>
+
+        <main class="app-layout">
+            <div class="controls-panel">
+                <div class="control-group">
+                    <label for="imageLoader" class="step-label">Langkah 1: Upload Gambar</label>
+                    <input type="file" id="imageLoader" name="imageLoader" accept="image/*">
+                </div>
+
+                <div class="control-group ai-group">
+                    <label class="step-label">Mode Otomatis (Beta)</label>
+                    <button id="aiGenerateButton" class="ai-button">✨ Generate with AI</button>
+                    <p class="instruction">Biarkan AI yang bekerja untuk Anda. Memerlukan waktu beberapa detik.</p>
+                </div>
+                
+                <div class="control-group">
+                     <label class="step-label">Mode Manual</label>
+                     <p class="instruction">Klik & seret pada gambar untuk membuat kotak hitam.</p>
+                     <textarea id="textInput" placeholder="Atau ketik teks lucu manual di sini..."></textarea>
+                     <div class="text-controls">
+                         <div>
+                            <label for="fontSize">Ukuran:</label>
+                            <input type="range" id="fontSize" min="10" max="150" value="40">
+                         </div>
+                         <div>
+                            <label for="fontColor">Warna:</label>
+                            <input type="color" id="fontColor" value="#FFFFFF">
+                         </div>
+                     </div>
+                     <div class="font-select-wrapper">
+                        <label for="fontFamily">Jenis Font:</label>
+                        <select id="fontFamily">
+                            <option value="Anton">Anton (Tebal)</option>
+                            <option value="Inter">Inter (Bersih)</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Impact">Impact</option>
+                        </select>
+                     </div>
+                     <button id="undoButton">Undo Kotak Terakhir</button>
+                </div>
+
+                <div class="control-group">
+                    <label class="step-label">Langkah Terakhir: Download</label>
+                    <button id="downloadButton" class="primary-button">Download Gambar</button>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="editorCanvas"></canvas>
+                <div id="placeholder" class="canvas-placeholder">
+                    <p>Area edit akan muncul di sini setelah Anda upload gambar.</p>
+                </div>
+                <div id="loadingSpinner" class="loading-spinner" style="display: none;"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
