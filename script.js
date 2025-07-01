@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // GANTI DENGAN URL VERCEL ANDA SETELAH DEPLOY BACKEND
-    const BACKEND_URL = 'https://timpa-teks-api.vercel.app';
+    const BACKEND_URL = 'https://timpa-teks-api.vercel.app/api/generate-ai';
 
     const imageLoader = document.getElementById('imageLoader');
     const canvas = document.getElementById('editorCanvas');
